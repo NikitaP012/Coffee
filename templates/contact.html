@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load static %} {% block mainbody %}
+
+<!-- contact section start -->
+<div class="contact_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="contact_taital">Get In Touch</h1>
+                <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="contact_section_2">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="/contact" method="POST">
+                        {% csrf_token %}
+                        <div class="mail_section_1">
+                            <input type="text" class="mail_text" placeholder="Your Name" name="name">
+                            <input type="text" class="mail_text" placeholder="Your Email" name="email">
+                            <input type="text" class="mail_text" placeholder="Your Phone" name="phone_no">
+                            <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="message"></textarea>
+                            <div class="send_bt">
+                                <input type="submit" value=" Send ">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="map_main">
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="250" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact section end -->{% endblock mainbody %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load static %} {% block mainbody %}
+<!-- coffee section start -->
+<div class="coffee_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <h1 class="coffee_taital">OUR Coffee Menu</h1>
+            <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
+        </div>
+    </div>
+    <div class="coffee_section_2">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {% for coffee in coffees %}
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="coffee_img"><img src="{{coffee.img.url}}"></div>
+                                <h3 class="types_text">{{coffee.name}}(₹ {{coffee.price}})</h3>
+                                <p class="looking_text">{{coffee.description}}</p>
+                                <div class="read_bt"><a style="
+                                    background-color: antiquewhite;
+                                    color: black;
+                                " href="/order/{{coffee.id}}">Order</a></div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+<!-- coffee section end -->
+{% endblock mainbody %}

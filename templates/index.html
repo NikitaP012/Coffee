@@ -1,0 +1,225 @@
+ {% extends "base.html" %} {% load static %} {% block mainbody %}
+<!-- banner section start -->
+<div class="banner_section layout_padding">
+    <div class="container">
+        <div id="banner_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="banner_taital_main">
+                                <h1 class="banner_taital">coffee</h1>
+                                <h5 class="tasty_text">Tasty Of DozeCafe</h5>
+                                <p class="banner_text">more-or-less normal distribution of letters, as opposed to using </p>
+                                <div class="btn_main">
+                                    <div class="about_bt"><a href="#">About Us</a></div>
+                                    <div class="callnow_bt active"><a href="#">Call Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="banner_taital_main">
+                                <h1 class="banner_taital">coffee</h1>
+                                <h5 class="tasty_text">Tasty Of DozeCafe</h5>
+                                <p class="banner_text">more-or-less normal distribution of letters, as opposed to using </p>
+                                <div class="btn_main">
+                                    <div class="about_bt"><a href="#">About Us</a></div>
+                                    <div class="callnow_bt active"><a href="#">Call Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="banner_taital_main">
+                                <h1 class="banner_taital">coffee</h1>
+                                <h5 class="tasty_text">Tasty Of DozeCafe</h5>
+                                <p class="banner_text">more-or-less normal distribution of letters, as opposed to using </p>
+                                <div class="btn_main">
+                                    <div class="about_bt"><a href="#">About Us</a></div>
+                                    <div class="callnow_bt active"><a href="#">Call Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#banner_slider" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#banner_slider" role="button" data-slide="next">
+                <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- banner section end -->
+</div>
+<!-- header section end -->
+<!-- coffee section start -->
+<div class="coffee_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <h1 class="coffee_taital">OUR Coffee OFFER</h1>
+            <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
+        </div>
+    </div>
+    <div class="coffee_section_2">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {% for coffee in list1 %}
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="coffee_img"><img src="{{coffee.img.url}}"></div>
+                                <h3 class="types_text">{{coffee.name}}</h3>
+                                <p class="looking_text">{{coffee.description}}</p>
+                                <div class="read_bt"><a href="/order/{{coffee.id}}">Order</a></div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {% for coffee in list2 %}
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="coffee_img"><img src="{{coffee.img.url}}"></div>
+                                <h3 class="types_text">{{coffee.name}}</h3>
+                                <p class="looking_text">{{coffee.description}}</p>
+                                <div class="read_bt"><a href="/order/{{coffee.id}}">Order</a></div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {% for coffee in list3 %}
+
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="coffee_img"><img src="{{coffee.img.url}}"></div>
+                                <h3 class="types_text">{{coffee.name}}</h3>
+                                <p class="looking_text">{{coffee.description}}</p>
+                                <div class="read_bt"><a href="/order/{{coffee.id}}">Order</a></div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- coffee section end -->
+<!-- about section start -->
+<div class="about_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="about_taital">About Our shop</h1>
+                <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
+            </div>
+        </div>
+        <div class="about_section_2 layout_padding">
+            <div class="image_iman"><img src="{% static 'images/about-img.png' %}" class="about_img"></div>
+            <div class="about_taital_box">
+                <h1 class="about_taital_1">Coffee distribution '</h1>
+                <p class=" about_text">has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editorhas a more-or-less normal distribution of letters,
+                    as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editor</p>
+                <div class="readmore_btn"><a href="#">Read More</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about section end -->
+<!-- blog section start -->
+<div class="blog_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="about_taital">Our Blog</h1>
+                <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
+            </div>
+        </div>
+        <div class="blog_section_2">
+            <div class="row">
+                {% for blog in blogs %}
+
+                <div class="col-md-6">
+                    <div class="blog_box">
+                        <div class="blog_img"><img src="{{blog.img.url}}"></div>
+                        <h4 class="date_text">{{blog.date}}</h4>
+                        <h4 class="prep_text">{{blog.name}}</h4>
+                        <p class="lorem_text">{{blog.description}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- blog section end -->
+<!-- contact section start -->
+<div class="contact_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="contact_taital">Get In Touch</h1>
+                <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="contact_section_2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mail_section_1">
+                        <input type="text" class="mail_text" placeholder="Your Name" name="Your Name">
+                        <input type="text" class="mail_text" placeholder="Your Email" name="Your Email">
+                        <input type="text" class="mail_text" placeholder="Your Phone" name="Your Phone">
+                        <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
+                        <div class="send_bt"><a href="#">SEND</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact section end -->
+{% endblock mainbody %}

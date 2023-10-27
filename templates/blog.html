@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% load static %}
+<!-- blog section start -->
+{% block mainbody %}
+<div class="blog_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="about_taital">Our Blog</h1>
+                <div class="bulit_icon"><img src="{% static 'images/bulit-icon.png' %}"></div>
+            </div>
+        </div>
+        <div class="blog_section_2">
+            <div class="row">
+                {% for blog in blogs %}
+
+                <div class="col-md-6">
+                    <div class="blog_box">
+                        <div class="blog_img"><img src="{{blog.img.url}}"></div>
+                        <h4 class="date_text">{{blog.date}}</h4>
+                        <h4 class="prep_text">{{blog.name}}</h4>
+                        <p class="lorem_text">{{blog.description}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- blog section end -->
+{% endblock mainbody %}
